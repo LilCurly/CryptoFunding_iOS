@@ -1,0 +1,6 @@
+framework module Pods_CryptoFunding {
+  umbrella header "Pods-CryptoFunding-umbrella.h"
+
+  export *
+  module * { export * }
+}
