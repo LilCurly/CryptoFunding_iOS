@@ -9,22 +9,27 @@
 import Foundation
 
 class FakeDao: AbstractDao {
-    private var listOfWallets = [Wallet]()
+    private var listOfWallets = [WalletData]()
     
-    func saveWallet(wallet: Wallet) -> Bool {
+    func saveWallet(wallet: WalletData) -> Bool {
         listOfWallets.append(wallet)
         return true
     }
     
-    func loadWalletForAddress(address: String) -> Wallet? {
+    func loadWalletForAddress(address: String) -> WalletData? {
         let result = listOfWallets.first { (wal) -> Bool in
             address == wal.address
         }
         return result
     }
     
-    func loadWallets() -> [Wallet] {
+    func loadWallets() -> [WalletData] {
         return listOfWallets
+    }
+    
+    func clear() -> Bool {
+        listOfWallets = [WalletData]()
+        return true
     }
     
 }
