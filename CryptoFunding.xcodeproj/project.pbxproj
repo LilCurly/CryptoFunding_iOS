@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7A2B29692130556F80EF6670 /* Pods_CryptoFunding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213DEA7FE3E8854FCCE18B27 /* Pods_CryptoFunding.framework */; };
+		C524876C23E2F99F00B6814D /* WalletHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876B23E2F99F00B6814D /* WalletHandler.swift */; };
+		C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876E23E2FCDB00B6814D /* WalletMapper.swift */; };
+		C524877123E2FEFE00B6814D /* WalletHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524877023E2FEFE00B6814D /* WalletHandlerTest.swift */; };
+		C524877323E3014100B6814D /* WalletRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524877223E3014100B6814D /* WalletRepositoryTest.swift */; };
 		C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */; };
 		C5F7F50023E2B5860041D88E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */; };
 		C5F7F50223E2B5860041D88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F50123E2B5860041D88E /* ViewController.swift */; };
@@ -21,10 +25,26 @@
 		C5F7F52223E2BAA60041D88E /* WalletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F52123E2BAA60041D88E /* WalletRepository.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C524876523E2F94500B6814D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5F7F4F223E2B5860041D88E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5F7F4F923E2B5860041D88E;
+			remoteInfo = CryptoFunding;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		213DEA7FE3E8854FCCE18B27 /* Pods_CryptoFunding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoFunding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FDC2871C336B805D8269CD /* Pods-CryptoFunding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoFunding.release.xcconfig"; path = "Target Support Files/Pods-CryptoFunding/Pods-CryptoFunding.release.xcconfig"; sourceTree = "<group>"; };
 		782C4A37F1EA352DCF81059F /* Pods-CryptoFunding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoFunding.debug.xcconfig"; path = "Target Support Files/Pods-CryptoFunding/Pods-CryptoFunding.debug.xcconfig"; sourceTree = "<group>"; };
+		C524876023E2F94500B6814D /* CryptoFundingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoFundingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C524876423E2F94500B6814D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C524876B23E2F99F00B6814D /* WalletHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHandler.swift; sourceTree = "<group>"; };
+		C524876E23E2FCDB00B6814D /* WalletMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMapper.swift; sourceTree = "<group>"; };
+		C524877023E2FEFE00B6814D /* WalletHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHandlerTest.swift; sourceTree = "<group>"; };
+		C524877223E3014100B6814D /* WalletRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepositoryTest.swift; sourceTree = "<group>"; };
 		C5F7F4FA23E2B5860041D88E /* CryptoFunding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoFunding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C524875D23E2F94500B6814D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5F7F4F723E2B5860041D88E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,10 +87,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C524876123E2F94500B6814D /* CryptoFundingTests */ = {
+			isa = PBXGroup;
+			children = (
+				C524876423E2F94500B6814D /* Info.plist */,
+				C524877023E2FEFE00B6814D /* WalletHandlerTest.swift */,
+				C524877223E3014100B6814D /* WalletRepositoryTest.swift */,
+			);
+			path = CryptoFundingTests;
+			sourceTree = "<group>";
+		};
+		C524876A23E2F97E00B6814D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C524876B23E2F99F00B6814D /* WalletHandler.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C524876D23E2FC7800B6814D /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				C524876E23E2FCDB00B6814D /* WalletMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		C5F7F4F123E2B5860041D88E = {
 			isa = PBXGroup;
 			children = (
 				C5F7F4FC23E2B5860041D88E /* CryptoFunding */,
+				C524876123E2F94500B6814D /* CryptoFundingTests */,
 				C5F7F4FB23E2B5860041D88E /* Products */,
 				F202A4FFCD06A62313BDA0B6 /* Pods */,
 				AEF2E16AB7A456FB224C54FF /* Frameworks */,
@@ -74,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C5F7F4FA23E2B5860041D88E /* CryptoFunding.app */,
+				C524876023E2F94500B6814D /* CryptoFundingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +136,7 @@
 		C5F7F4FC23E2B5860041D88E /* CryptoFunding */ = {
 			isa = PBXGroup;
 			children = (
+				C524876A23E2F97E00B6814D /* Utils */,
 				C5F7F51423E2B6410041D88E /* Repository */,
 				C5F7F51123E2B58D0041D88E /* Entities */,
 				C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */,
@@ -105,6 +161,7 @@
 		C5F7F51423E2B6410041D88E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C524876D23E2FC7800B6814D /* Mapper */,
 				C5F7F51623E2B6610041D88E /* DataModel */,
 				C5F7F51523E2B6510041D88E /* Database */,
 				C5F7F52123E2BAA60041D88E /* WalletRepository.swift */,
@@ -141,6 +198,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C524875F23E2F94500B6814D /* CryptoFundingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C524876923E2F94500B6814D /* Build configuration list for PBXNativeTarget "CryptoFundingTests" */;
+			buildPhases = (
+				C524875C23E2F94500B6814D /* Sources */,
+				C524875D23E2F94500B6814D /* Frameworks */,
+				C524875E23E2F94500B6814D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C524876623E2F94500B6814D /* PBXTargetDependency */,
+			);
+			name = CryptoFundingTests;
+			productName = CryptoFundingTests;
+			productReference = C524876023E2F94500B6814D /* CryptoFundingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C5F7F4F923E2B5860041D88E /* CryptoFunding */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5F7F50E23E2B5870041D88E /* Build configuration list for PBXNativeTarget "CryptoFunding" */;
@@ -170,6 +245,10 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = student5308;
 				TargetAttributes = {
+					C524875F23E2F94500B6814D = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = C5F7F4F923E2B5860041D88E;
+					};
 					C5F7F4F923E2B5860041D88E = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -189,11 +268,19 @@
 			projectRoot = "";
 			targets = (
 				C5F7F4F923E2B5860041D88E /* CryptoFunding */,
+				C524875F23E2F94500B6814D /* CryptoFundingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C524875E23E2F94500B6814D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5F7F4F823E2B5860041D88E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +336,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C524875C23E2F94500B6814D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C524877323E3014100B6814D /* WalletRepositoryTest.swift in Sources */,
+				C524877123E2FEFE00B6814D /* WalletHandlerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5F7F4F623E2B5860041D88E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +354,8 @@
 				C5F7F52223E2BAA60041D88E /* WalletRepository.swift in Sources */,
 				C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */,
 				C5F7F52023E2B89B0041D88E /* FakeDao.swift in Sources */,
+				C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */,
+				C524876C23E2F99F00B6814D /* WalletHandler.swift in Sources */,
 				C5F7F50023E2B5860041D88E /* SceneDelegate.swift in Sources */,
 				C5F7F51E23E2B80D0041D88E /* AbstractDao.swift in Sources */,
 				C5F7F51C23E2B6B50041D88E /* WalletData.swift in Sources */,
@@ -265,6 +363,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C524876623E2F94500B6814D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5F7F4F923E2B5860041D88E /* CryptoFunding */;
+			targetProxy = C524876523E2F94500B6814D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C5F7F50323E2B5860041D88E /* Main.storyboard */ = {
@@ -286,6 +392,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C524876723E2F94500B6814D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CryptoFundingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = devmob9.CryptoFundingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoFunding.app/CryptoFunding";
+			};
+			name = Debug;
+		};
+		C524876823E2F94500B6814D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CryptoFundingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = devmob9.CryptoFundingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoFunding.app/CryptoFunding";
+			};
+			name = Release;
+		};
 		C5F7F50C23E2B5870041D88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C524876923E2F94500B6814D /* Build configuration list for PBXNativeTarget "CryptoFundingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C524876723E2F94500B6814D /* Debug */,
+				C524876823E2F94500B6814D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C5F7F4F523E2B5860041D88E /* Build configuration list for PBXProject "CryptoFunding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
