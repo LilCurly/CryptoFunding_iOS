@@ -10,7 +10,7 @@ import Foundation
 
 class WalletRepository {
     static let instance = WalletRepository()
-    private let dao: AbstractDao = FakeDao()
+    lazy private var dao: AbstractDao = FakeDao()
     private var currentWallet: Wallet?
     lazy private var loadedWallets = [Wallet]()
     
@@ -19,24 +19,32 @@ class WalletRepository {
     }
     
     func addWallet(wallet: Wallet) {
-        loadAllWallets()
+        //loadAllWallets()
         let isAlreadyInside = loadedWallets.contains { (wal) -> Bool in
             wal.address == wallet.address
         }
         if !isAlreadyInside {
-            if dao.saveWallet(wallet: wallet) {
+            let data = WalletMapper.modelToData(model: wallet)
+            if dao.saveWallet(wallet: data) {
                 loadedWallets.append(wallet)
             }
         }
     }
     
     fileprivate func loadAllWallets() {
-        loadedWallets = dao.loadWallets()
+        loadedWallets = WalletMapper.dataListToModelList(datas: dao.loadWallets())
     }
     
     func getAllWallets() -> [Wallet] {
         loadAllWallets()
         return loadedWallets
+    }
+    
+    func getWalletForAddress(address: String) -> Wallet? {
+        if let data = dao.loadWalletForAddress(address: address) {
+            return WalletMapper.dataToModel(data: data)
+        }
+        return nil
     }
     
     func setCurrent(wallet: Wallet) {
@@ -50,5 +58,11 @@ class WalletRepository {
             return curWallet
         }
         return nil
+    }
+    
+    func clear() {
+        if (dao.clear()) {
+            loadedWallets = [Wallet]()
+        }
     }
 }
