@@ -9,7 +9,8 @@
 import Foundation
 
 protocol AbstractDao {
-    func saveWallet(wallet: Wallet) -> Bool
-    func loadWalletForAddress(address: String) -> Wallet?
-    func loadWallets() -> [Wallet]
+    func saveWallet(wallet: WalletData) -> Bool
+    func loadWalletForAddress(address: String) -> WalletData?
+    func loadWallets() -> [WalletData]
+    func clear() -> Bool
 }
