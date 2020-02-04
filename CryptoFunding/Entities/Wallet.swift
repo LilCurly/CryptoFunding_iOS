@@ -31,4 +31,12 @@ struct Wallet {
     public func getAddress() -> EthereumAddress? {
         return EthereumAddress(address)
     }
+    
+    public func getKeystore() -> EthereumKeystoreV3? {
+        let keystore = EthereumKeystoreV3(data)
+        if let workingKeystore = keystore {
+            return workingKeystore
+        }
+        return nil
+    }
 }
