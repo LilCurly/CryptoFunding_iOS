@@ -12,6 +12,7 @@
 		C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876E23E2FCDB00B6814D /* WalletMapper.swift */; };
 		C524877123E2FEFE00B6814D /* WalletHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524877023E2FEFE00B6814D /* WalletHandlerTest.swift */; };
 		C524877323E3014100B6814D /* WalletRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524877223E3014100B6814D /* WalletRepositoryTest.swift */; };
+		C56FD3FE23E953BC00955A9E /* Web3Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56FD3FD23E953BC00955A9E /* Web3Util.swift */; };
 		C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */; };
 		C5F7F50023E2B5860041D88E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */; };
 		C5F7F50223E2B5860041D88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F50123E2B5860041D88E /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		C524876E23E2FCDB00B6814D /* WalletMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMapper.swift; sourceTree = "<group>"; };
 		C524877023E2FEFE00B6814D /* WalletHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHandlerTest.swift; sourceTree = "<group>"; };
 		C524877223E3014100B6814D /* WalletRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepositoryTest.swift; sourceTree = "<group>"; };
+		C56FD3FD23E953BC00955A9E /* Web3Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Util.swift; sourceTree = "<group>"; };
 		C5F7F4FA23E2B5860041D88E /* CryptoFunding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoFunding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				C524876B23E2F99F00B6814D /* WalletHandler.swift */,
+				C56FD3FD23E953BC00955A9E /* Web3Util.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */,
 				C524876C23E2F99F00B6814D /* WalletHandler.swift in Sources */,
 				C5F7F50023E2B5860041D88E /* SceneDelegate.swift in Sources */,
+				C56FD3FE23E953BC00955A9E /* Web3Util.swift in Sources */,
 				C5F7F51E23E2B80D0041D88E /* AbstractDao.swift in Sources */,
 				C5F7F51C23E2B6B50041D88E /* WalletData.swift in Sources */,
 			);
