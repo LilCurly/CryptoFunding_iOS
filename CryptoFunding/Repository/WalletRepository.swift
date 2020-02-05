@@ -18,6 +18,11 @@ class WalletRepository {
         
     }
     
+    func openConnection(for dao: AbstractDao) -> WalletRepository {
+        self.dao = dao
+        return self
+    }
+    
     func addWallet(wallet: Wallet) {
         //loadAllWallets()
         let isAlreadyInside = loadedWallets.contains { (wal) -> Bool in
