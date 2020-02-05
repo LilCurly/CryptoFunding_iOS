@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        let repoInstance = WalletRepositoryFactory.getFakeDaoRepository()
         let wallet = WalletHandler.generateWalletFromPrivateKey(privateKey: "7EB64DDB45D47DEF728B97D2B539B62CE7FCBF278D9610C96D8ED279A527FC96", password: "test", walletName: "MyWallet")!
-        WalletRepository.instance.setCurrent(wallet: wallet)
+        repoInstance.setCurrent(wallet: wallet)
         let currentWallet = WalletRepository.instance.getCurrent()
         if let currentWallet = currentWallet {
             let result = SimpleTestContract.deploy(address: currentWallet.getAddress()!, password: "test")
