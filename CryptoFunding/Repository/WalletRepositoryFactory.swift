@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class WalletRepositoryFactory {
+    static func getFakeDaoRepository() -> WalletRepository {
+        return WalletRepository.instance.openConnection(for: FakeDao())
+    }
+}
