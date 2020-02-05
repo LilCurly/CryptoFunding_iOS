@@ -17,27 +17,27 @@ class WalletRepositoryTest: XCTestCase {
     }
     
     func testAddingWalletAddsItToDAO() {
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         repo.addWallet(wallet: Wallet(address: "0000", data: Data(), name: "test"))
         XCTAssertTrue(repo.getAllWallets().count == 1)
     }
     
     func testAddingTwoWalletsAddsThemToDAO() {
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         repo.addWallet(wallet: Wallet(address: "0000", data: Data(), name: "test"))
         repo.addWallet(wallet: Wallet(address: "1111", data: Data(), name: "test"))
         XCTAssertTrue(repo.getAllWallets().count == 2)
     }
     
     func testAddingTwoWalletsWithSameAddressFailsToAddThemToDAO() {
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         repo.addWallet(wallet: Wallet(address: "0000", data: Data(), name: "test"))
         repo.addWallet(wallet: Wallet(address: "0000", data: Data(), name: "test"))
         XCTAssertTrue(repo.getAllWallets().count == 1)
     }
     
     func testGettingWalletForAddressReturnsCorrectWallet() {
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         repo.addWallet(wallet: Wallet(address: "0000", data: Data(), name: "test"))
         let wal = repo.getWalletForAddress(address: "0000")
         XCTAssertNotNil(wal)
@@ -45,14 +45,14 @@ class WalletRepositoryTest: XCTestCase {
     }
     
     func testGettingWalletForWrongAddressReturnsNoWallet() {
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         repo.addWallet(wallet: Wallet(address: "0000", data: Data(), name: "test"))
         let wal = repo.getWalletForAddress(address: "1111")
         XCTAssertNil(wal)
     }
     
     func testSettingCurrentWalletSetsItCorrectly() {
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         let wal = Wallet(address: "0000", data: Data(), name: "test")
         repo.addWallet(wallet: wal)
         repo.setCurrent(wallet: wal)

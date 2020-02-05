@@ -52,7 +52,7 @@ class WalletHandlerTest: XCTestCase {
     
     func testGeneratingWalletsAddsThemToStorage() {
         
-        let repo = WalletRepository.instance
+        let repo = WalletRepositoryFactory.getFakeDaoRepository()
         let _ = WalletHandler.generateNewWallet(password: "Test", walletName: "NameTest")
         let _ = WalletHandler.generateWalletFromPrivateKey(privateKey: "7EB64DDB45D47DEF728B97D2B539B62CE7FCBF278D9610C96D8ED279A527FC96", password: "sdfsf", walletName: "SecondWallet")
         XCTAssertTrue(repo.getAllWallets().count == 2)
