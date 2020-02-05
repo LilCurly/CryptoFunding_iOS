@@ -51,6 +51,10 @@ class WalletRepository {
         currentWallet = loadedWallets.filter({ (wal) -> Bool in
             wal.address == wallet.address
             }).first
+        if let currentWallet = currentWallet {
+            guard let keystore = currentWallet.getKeystore() else {return}
+            Web3Util.setCurrentKeystore(keystore: keystore)
+        }
     }
     
     func getCurrent() -> Wallet? {
