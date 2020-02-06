@@ -27,6 +27,7 @@ class SimpleTestContract {
             do {
                 return try tx.send(password: password)
             } catch {
+                print(error)
                 return nil
             }
         }
