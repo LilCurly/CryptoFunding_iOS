@@ -20,4 +20,20 @@ class Web3Util {
         let keystoreManager = KeystoreManager([keystore])
         instance.addKeystoreManager(keystoreManager)
     }
+    
+    static func getTransactionReceipt(hash: String) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            var result: TransactionReceipt? = nil
+            while result == nil {
+                do {
+                    result = try instance.eth.getTransactionReceipt(hash)
+                    if let contractAddress = result?.contractAddress {
+                        print(contractAddress.address)
+                    }
+                } catch {
+                    
+                }
+            }
+        }
+    }
 }
