@@ -36,4 +36,24 @@ class Web3Util {
             }
         }
     }
+    
+    static func estimateGasCost(tx: WriteTransaction) -> String? {
+        do {
+            let gasPrice = try instance.eth.getGasPrice()
+            let estimatedGas = try tx.estimateGas() * gasPrice
+            return Web3.Utils.formatToEthereumUnits(estimatedGas, toUnits: .eth, decimals: 6, decimalSeparator: ".")
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    static func writeTransaction(tx: WriteTransaction, password: String) -> TransactionSendingResult? {
+        do {
+            return try tx.send(password: password)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }
