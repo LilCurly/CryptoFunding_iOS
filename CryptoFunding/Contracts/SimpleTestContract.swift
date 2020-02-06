@@ -10,8 +10,8 @@ import Foundation
 import Web3swift
 
 class SimpleTestContract {
-    private static let abi = "[{\"constant\":true,\"inputs\":[],\"name\":\"getName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}]"
-    private static let bytecode = Data.fromHex("60806040526040518060400160405280600581526020017f526f6d616e0000000000000000000000000000000000000000000000000000008152506000908051906020019061004f929190610062565b5034801561005c57600080fd5b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b61018a806101166000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806317d7de7c14610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561014b5780601f106101205761010080835404028352916020019161014b565b820191906000526020600020905b81548152906001019060200180831161012e57829003601f168201915b505050505090509056fea265627a7a72315820fd8fe3f9899b068fabc17b220201a9ace8029b96f028eb852f4c750d5f141d1364736f6c634300050c0032")!
+    private static let abi = "[{\"inputs\":[],\"name\":\"getNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"nbr\",\"type\":\"uint256\"}],\"payable\":false,\"name\":\"setNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
+    private static let bytecode = Data.fromHex("60806040526000805534801561001457600080fd5b5060c7806100236000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80633fb5c1cb146037578063f2c9ecd8146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea26469706673582212207a6e65fa75dcfcbb201c169f162ddcdc345923170dc3b1e3dc5cb29995353c5364736f6c63430006010033")!
     
     static func deploy(address: EthereumAddress) -> WriteTransaction? {
         let contract = Web3Util.instance.contract(abi, abiVersion: 2)
@@ -24,6 +24,38 @@ class SimpleTestContract {
             options.gasPrice = .automatic
             options.gasLimit = .automatic
             return workingContract.deploy(bytecode:bytecode , parameters: [AnyObject](), extraData: Data(), transactionOptions: options)!
+        }
+        return nil
+    }
+    
+    static func getNumber(address: EthereumAddress) -> Any? {
+        let contract = Web3Util.instance.contract(abi, at: address, abiVersion: 2)
+        
+        if let contract = contract {
+            let readTx = contract.read("getNumber", parameters: [AnyObject](), extraData: Data(), transactionOptions: TransactionOptions.defaultOptions)
+            do {
+                let result = try readTx?.call()
+                return result?["0"]
+            } catch {
+                print(error)
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    static func setNumber(userAddress: EthereumAddress, contractAddress: EthereumAddress, parameter: UInt) -> WriteTransaction? {
+        let contract = Web3Util.instance.contract(abi, at: contractAddress, abiVersion: 2)
+        
+        if let contract = contract {
+            var options = TransactionOptions.defaultOptions
+            let from = userAddress
+            options.value = .zero
+            options.from = from
+            options.gasPrice = .automatic
+            options.gasLimit = .automatic
+            return contract.write("setNumber", parameters: [parameter as AnyObject], extraData: Data(), transactionOptions: options)
         }
         return nil
     }

@@ -27,6 +27,12 @@ class ViewController: UIViewController {
                 print(sentTx.hash)
                 Web3Util.getTransactionReceipt(hash: sentTx.hash)
                 print("test")
+                let writeTxMeth = SimpleTestContract.setNumber(userAddress: currentWallet.getAddress()!, contractAddress: EthereumAddress("0x3c76f225a0900F7797F20c8FdE9357d61684BBF6")!, parameter: 20)
+                let estimatedGasCostMeth = Web3Util.estimateGasCost(tx: writeTxMeth!)
+                print(estimatedGasCostMeth ?? "")
+                guard let sentTxMeth = Web3Util.writeTransaction(tx: writeTxMeth!, password: "test") else {return}
+                let result = SimpleTestContract.getNumber(address: EthereumAddress("0x3c76f225a0900F7797F20c8FdE9357d61684BBF6")!)
+                print(result)
             }
         }
         
