@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Web3swift
+import web3swift
 
 struct Wallet {
     let address: String

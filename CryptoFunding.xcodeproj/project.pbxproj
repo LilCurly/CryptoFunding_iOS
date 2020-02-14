@@ -15,6 +15,7 @@
 		C56FD3FE23E953BC00955A9E /* Web3Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56FD3FD23E953BC00955A9E /* Web3Util.swift */; };
 		C56FD42323E968DC00955A9E /* SimpleTestContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56FD42223E968DC00955A9E /* SimpleTestContract.swift */; };
 		C582F7A123EAF37B00BE8D80 /* WalletRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582F7A023EAF37B00BE8D80 /* WalletRepositoryFactory.swift */; };
+		C5B8E5A823F17A71003568F0 /* FundingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B8E5A723F17A71003568F0 /* FundingContract.swift */; };
 		C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */; };
 		C5F7F50023E2B5860041D88E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */; };
 		C5F7F50223E2B5860041D88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F50123E2B5860041D88E /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		C56FD3FD23E953BC00955A9E /* Web3Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Util.swift; sourceTree = "<group>"; };
 		C56FD42223E968DC00955A9E /* SimpleTestContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTestContract.swift; sourceTree = "<group>"; };
 		C582F7A023EAF37B00BE8D80 /* WalletRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepositoryFactory.swift; sourceTree = "<group>"; };
+		C5B8E5A723F17A71003568F0 /* FundingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundingContract.swift; sourceTree = "<group>"; };
 		C5F7F4FA23E2B5860041D88E /* CryptoFunding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoFunding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				C56FD42223E968DC00955A9E /* SimpleTestContract.swift */,
+				C5B8E5A723F17A71003568F0 /* FundingContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				C5F7F51323E2B59A0041D88E /* Wallet.swift in Sources */,
 				C5F7F50223E2B5860041D88E /* ViewController.swift in Sources */,
 				C582F7A123EAF37B00BE8D80 /* WalletRepositoryFactory.swift in Sources */,
+				C5B8E5A823F17A71003568F0 /* FundingContract.swift in Sources */,
 				C5F7F52223E2BAA60041D88E /* WalletRepository.swift in Sources */,
 				C56FD42323E968DC00955A9E /* SimpleTestContract.swift in Sources */,
 				C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */,

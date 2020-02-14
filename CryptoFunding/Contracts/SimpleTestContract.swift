@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Web3swift
+import web3swift
 
 class SimpleTestContract {
     private static let abi = "[{\"inputs\":[],\"name\":\"getNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"nbr\",\"type\":\"uint256\"}],\"payable\":false,\"name\":\"setNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"

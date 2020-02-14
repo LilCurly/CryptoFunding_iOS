@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Web3swift
+import web3swift
 
 class Web3Util {
-    static let instance = Web3.InfuraRopstenWeb3()
+    static let instance = Web3.InfuraRopstenWeb3(accessToken: "1e0e99dc4344427f903cedbb21639caa")
     
     private init() {
         

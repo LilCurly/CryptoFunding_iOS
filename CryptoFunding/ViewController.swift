@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Web3swift
+import web3swift
 
 class ViewController: UIViewController {
 
@@ -19,21 +19,17 @@ class ViewController: UIViewController {
         repoInstance.setCurrent(wallet: wallet)
         let currentWallet = WalletRepository.instance.getCurrent()
         if let currentWallet = currentWallet {
-            let writeTx = SimpleTestContract.deploy(address: currentWallet.getAddress()!)
-            if let writeTx = writeTx {
-                let estimatedGasCost = Web3Util.estimateGasCost(tx: writeTx)
-                print(estimatedGasCost ?? "")
-                guard let sentTx = Web3Util.writeTransaction(tx: writeTx, password: "test") else {return}
-                print(sentTx.hash)
-                Web3Util.getTransactionReceipt(hash: sentTx.hash)
-                print("test")
-                let writeTxMeth = SimpleTestContract.setNumber(userAddress: currentWallet.getAddress()!, contractAddress: EthereumAddress("0x3c76f225a0900F7797F20c8FdE9357d61684BBF6")!, parameter: 20)
-                let estimatedGasCostMeth = Web3Util.estimateGasCost(tx: writeTxMeth!)
-                print(estimatedGasCostMeth ?? "")
-                guard let sentTxMeth = Web3Util.writeTransaction(tx: writeTxMeth!, password: "test") else {return}
-                let result = SimpleTestContract.getNumber(address: EthereumAddress("0x3c76f225a0900F7797F20c8FdE9357d61684BBF6")!)
-                print(result)
-            }
+            let result = FundingContract.getTotalTasks(userAddress: currentWallet.getAddress()!, projectId: 0)
+            print(result)
+//            let writeTx = FundingContract.launchFundingProject(userAddress: currentWallet.getAddress()!, taskNumber: 1, deadlines: [100000000000000000], amountAsked: [500])
+//            if let writeTx = writeTx {
+//                let estimatedGasCost = Web3Util.estimateGasCost(tx: writeTx)
+//                print(estimatedGasCost ?? "")
+//                guard let sentTx = Web3Util.writeTransaction(tx: writeTx, password: "test") else {return}
+//                print(sentTx.hash)
+//                Web3Util.getTransactionReceipt(hash: sentTx.hash)
+//                print("test")
+//            }
         }
         
     }
