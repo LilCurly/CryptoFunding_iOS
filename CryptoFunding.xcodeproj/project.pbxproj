@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200F1F02240658E300713BE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F1F01240658E300713BE6 /* Extensions.swift */; };
+		202D7D1E240570D50044E273 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202D7D1D240570D50044E273 /* Category.swift */; };
+		2088F0A22409255E0082F894 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088F0A02409255E0082F894 /* CategoryCell.swift */; };
+		2088F0A32409255E0082F894 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2088F0A12409255E0082F894 /* CategoryCell.xib */; };
+		20909BAC24007AD900EFF46B /* BottomLeftRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20909BAB24007AD900EFF46B /* BottomLeftRoundedView.swift */; };
+		20909BAE24007D8B00EFF46B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20909BAD24007D8B00EFF46B /* HomeViewController.swift */; };
+		20909BB224028E2900EFF46B /* LeftLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20909BB124028E2900EFF46B /* LeftLabel.swift */; };
 		7A2B29692130556F80EF6670 /* Pods_CryptoFunding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213DEA7FE3E8854FCCE18B27 /* Pods_CryptoFunding.framework */; };
 		C524876C23E2F99F00B6814D /* WalletHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876B23E2F99F00B6814D /* WalletHandler.swift */; };
 		C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876E23E2FCDB00B6814D /* WalletMapper.swift */; };
@@ -40,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200F1F01240658E300713BE6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		202D7D1D240570D50044E273 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2088F0A02409255E0082F894 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		2088F0A12409255E0082F894 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		20909BAB24007AD900EFF46B /* BottomLeftRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftRoundedView.swift; sourceTree = "<group>"; };
+		20909BAD24007D8B00EFF46B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		20909BB124028E2900EFF46B /* LeftLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftLabel.swift; sourceTree = "<group>"; };
 		213DEA7FE3E8854FCCE18B27 /* Pods_CryptoFunding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoFunding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FDC2871C336B805D8269CD /* Pods-CryptoFunding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoFunding.release.xcconfig"; path = "Target Support Files/Pods-CryptoFunding/Pods-CryptoFunding.release.xcconfig"; sourceTree = "<group>"; };
 		782C4A37F1EA352DCF81059F /* Pods-CryptoFunding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoFunding.debug.xcconfig"; path = "Target Support Files/Pods-CryptoFunding/Pods-CryptoFunding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +101,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200F1EFE240658A600713BE6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				200F1F01240658E300713BE6 /* Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		202D7D1C240570C80044E273 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				202D7D1D240570D50044E273 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20909BAA24007A9800EFF46B /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				20909BAB24007AD900EFF46B /* BottomLeftRoundedView.swift */,
+				20909BB124028E2900EFF46B /* LeftLabel.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		20A043C524055245007A1388 /* Block Chain */ = {
+			isa = PBXGroup;
+			children = (
+				C56FD42123E9689500955A9E /* Contracts */,
+				C524876A23E2F97E00B6814D /* Utils */,
+				C5F7F51423E2B6410041D88E /* Repository */,
+				C5F7F51123E2B58D0041D88E /* Entities */,
+			);
+			path = "Block Chain";
+			sourceTree = "<group>";
+		};
+		20A043C624055385007A1388 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20909BAD24007D8B00EFF46B /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		20A043C7240553D1007A1388 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2088F0A02409255E0082F894 /* CategoryCell.swift */,
+				2088F0A12409255E0082F894 /* CategoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AEF2E16AB7A456FB224C54FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,10 +221,12 @@
 		C5F7F4FC23E2B5860041D88E /* CryptoFunding */ = {
 			isa = PBXGroup;
 			children = (
-				C56FD42123E9689500955A9E /* Contracts */,
-				C524876A23E2F97E00B6814D /* Utils */,
-				C5F7F51423E2B6410041D88E /* Repository */,
-				C5F7F51123E2B58D0041D88E /* Entities */,
+				200F1EFE240658A600713BE6 /* Helper */,
+				202D7D1C240570C80044E273 /* Model */,
+				20A043C7240553D1007A1388 /* Cell */,
+				20A043C624055385007A1388 /* ViewController */,
+				20A043C524055245007A1388 /* Block Chain */,
+				20909BAA24007A9800EFF46B /* Custom Views */,
 				C5F7F4FD23E2B5860041D88E /* AppDelegate.swift */,
 				C5F7F4FF23E2B5860041D88E /* SceneDelegate.swift */,
 				C5F7F50123E2B5860041D88E /* ViewController.swift */,
@@ -308,6 +377,7 @@
 				C5F7F50A23E2B5870041D88E /* LaunchScreen.storyboard in Resources */,
 				C5F7F50723E2B5870041D88E /* Assets.xcassets in Resources */,
 				C5F7F50523E2B5860041D88E /* Main.storyboard in Resources */,
+				2088F0A32409255E0082F894 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2088F0A22409255E0082F894 /* CategoryCell.swift in Sources */,
 				C5F7F51323E2B59A0041D88E /* Wallet.swift in Sources */,
 				C5F7F50223E2B5860041D88E /* ViewController.swift in Sources */,
 				C582F7A123EAF37B00BE8D80 /* WalletRepositoryFactory.swift in Sources */,
@@ -377,8 +448,13 @@
 				C56FD42323E968DC00955A9E /* SimpleTestContract.swift in Sources */,
 				C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */,
 				C5F7F52023E2B89B0041D88E /* FakeDao.swift in Sources */,
+				200F1F02240658E300713BE6 /* Extensions.swift in Sources */,
+				20909BB224028E2900EFF46B /* LeftLabel.swift in Sources */,
+				202D7D1E240570D50044E273 /* Category.swift in Sources */,
+				20909BAC24007AD900EFF46B /* BottomLeftRoundedView.swift in Sources */,
 				C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */,
 				C524876C23E2F99F00B6814D /* WalletHandler.swift in Sources */,
+				20909BAE24007D8B00EFF46B /* HomeViewController.swift in Sources */,
 				C5F7F50023E2B5860041D88E /* SceneDelegate.swift in Sources */,
 				C56FD3FE23E953BC00955A9E /* Web3Util.swift in Sources */,
 				C5F7F51E23E2B80D0041D88E /* AbstractDao.swift in Sources */,
@@ -574,7 +650,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NW7B48KQN6;
 				INFOPLIST_FILE = CryptoFunding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,7 +660,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = devmob9.CryptoFunding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -592,7 +670,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NW7B48KQN6;
 				INFOPLIST_FILE = CryptoFunding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,7 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = devmob9.CryptoFunding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

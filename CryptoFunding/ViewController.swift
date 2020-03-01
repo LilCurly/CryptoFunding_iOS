@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         let currentWallet = WalletRepository.instance.getCurrent()
         if let currentWallet = currentWallet {
             /* Exemple d'intéraction avec la blockchain en lecture -> Pas de coût en gas */
-//            let result = FundingContract.getTotalTasks(userAddress: currentWallet.getAddress()!, projectId: 0)
-//            print(result)
+            let result = FundingContract.getTotalTasks(userAddress: currentWallet.getAddress()!, projectId: 0)
+            print(result)
             /* Exemple d'intéraction avec la blockchain en écriture -> Coût en gas, récupération de l'estimation du coût, écriture de la transaction avec le mdp du portefeuille et récupération de la recette à la fin de la transaction */
 //            let writeTx = FundingContract.launchFundingProject(userAddress: currentWallet.getAddress()!, taskNumber: 1, deadlines: [100000000000000000], amountAsked: [500])
 //            if let writeTx = writeTx {
