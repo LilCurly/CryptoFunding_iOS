@@ -44,15 +44,6 @@ class CategoryCell: UICollectionViewCell {
         
     }
     
-    override func awakeFromNib() {
-        backgroundColor = .clear
-        categoryLabel.textAlignment = .center
-        categoryLabel.textColor = UIColor.appWhite
-        imageBackgroundView.backgroundColor = UIColor.appWhite
-        categoryImageView.tintColor = UIColor.appPurple
-        imageBackgroundView.layer.cornerRadius = 10
-    }
-    
     var category: Category? {
         
         didSet {
@@ -62,6 +53,17 @@ class CategoryCell: UICollectionViewCell {
             categoryImageView.image = UIImage(named: aCategory.imageName)
         }
         
+    }
+    
+    override func awakeFromNib() {
+        backgroundColor = .clear
+        categoryLabel.textAlignment = .center
+        categoryLabel.textColor = UIColor.appWhite
+        categoryLabel.adjustsFontSizeToFitWidth = true
+        categoryLabel.numberOfLines = 2
+        imageBackgroundView.backgroundColor = UIColor.appWhite
+        categoryImageView.tintColor = UIColor.appPurple
+        imageBackgroundView.layer.cornerRadius = 10
     }
 
 }

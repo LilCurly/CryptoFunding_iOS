@@ -10,15 +10,30 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var categoriesLabel: LeftLabel!
-    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    @IBOutlet weak var topContainerView: BottomLeftRoundedView!
+    @IBOutlet weak var categoryLabel: LeftLabel!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var trendingLabel: LeftLabel!
+    @IBOutlet weak var projectsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var categoryCollectionViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoryCollectionViewBottomConstraint: NSLayoutConstraint!
+    
     
     private let categories = Category.categories
+    private var projects = ProjectThumbnail.pathfinderProjects
+    private var cellSpacing: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cellSpacing = view.frame.width * 3 / 100
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let availableSpace = topContainerView.frame.height - categoryLabel.frame.origin.y - categoryLabel.frame.height - categoryCollectionView.frame.height
+        categoryCollectionViewTopConstraint.constant = availableSpace / 2
+        categoryCollectionViewBottomConstraint.constant = availableSpace / 2
     }
     
     func setupView() {
@@ -28,33 +43,49 @@ class HomeViewController: UIViewController {
         navigationItem.title = "Crypto Bingo"
         navigationItem.titleView?.tintColor = UIColor.appWhite
         
-        categoriesLabel.text = "Categories"
+        categoryLabel.text = "Categories"
         trendingLabel.text = "Trending"
         
-        setupCategoryCollectionView()
         setupNavigationBar()
+        setupCategoryCollectionView()
+        setupProjectCollectionView()
+    }
+    
+    func setupNavigationBar() {
+        guard let navigationController = navigationController else { return }
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.view.backgroundColor = .clear
     }
     
     func setupCategoryCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
-        categoriesCollectionView.collectionViewLayout = layout
+        categoryCollectionView.collectionViewLayout = layout
         
-        categoriesCollectionView.delegate = self
-        categoriesCollectionView.dataSource = self
-        categoriesCollectionView.backgroundColor = .clear
-        categoriesCollectionView.showsHorizontalScrollIndicator = false
-        categoriesCollectionView.contentInset.left = 16
-        categoriesCollectionView.contentInset.right = 16
-        categoriesCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: CategoryCell.reuseCellIdentifier)
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.backgroundColor = .clear
+        categoryCollectionView.showsHorizontalScrollIndicator = false
+        categoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: cellSpacing, bottom: 0, right: cellSpacing)
+        categoryCollectionView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        categoryCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: CategoryCell.reuseCellIdentifier)
     }
     
-    func setupNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
+    func setupProjectCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        projectsCollectionView.collectionViewLayout = layout
+        
+        projectsCollectionView.delegate = self
+        projectsCollectionView.dataSource = self
+        projectsCollectionView.backgroundColor = .clear
+        projectsCollectionView.showsHorizontalScrollIndicator = false
+        projectsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        projectsCollectionView.register(UINib(nibName: "ProjectCell", bundle: nil), forCellWithReuseIdentifier: ProjectCell.reuseCellIdentifier)
     }
 
 }
@@ -62,26 +93,47 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        
+        if collectionView == categoryCollectionView {
+            return categories.count
+        } else {
+            return projects.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseCellIdentifier, for: indexPath) as! CategoryCell
-                
-        cell.category = categories[indexPath.row]
         
-        return cell
+        if collectionView == categoryCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseCellIdentifier, for: indexPath) as! CategoryCell
+                    
+            cell.category = categories[indexPath.row]
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProjectCell.reuseCellIdentifier, for: indexPath) as! ProjectCell
+                    
+            cell.project = projects[indexPath.row]
+            
+            return cell
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let availableHeight = collectionView.bounds.inset(by: collectionView.layoutMargins).height
+        let availableHeight = collectionView.bounds.inset(by: collectionView.layoutMargins).height - 1
         
-        return CGSize(width: availableHeight - 40, height: availableHeight)
+        if collectionView == categoryCollectionView {
+            return CGSize(width: availableHeight - 28, height: availableHeight)
+        } else {
+            return CGSize(width: (availableHeight * 0.8), height: availableHeight)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        return cellSpacing
     }
     
 }

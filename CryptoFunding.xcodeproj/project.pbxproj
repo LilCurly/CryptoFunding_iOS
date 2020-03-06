@@ -14,6 +14,9 @@
 		20909BAC24007AD900EFF46B /* BottomLeftRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20909BAB24007AD900EFF46B /* BottomLeftRoundedView.swift */; };
 		20909BAE24007D8B00EFF46B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20909BAD24007D8B00EFF46B /* HomeViewController.swift */; };
 		20909BB224028E2900EFF46B /* LeftLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20909BB124028E2900EFF46B /* LeftLabel.swift */; };
+		20CA5CE4240E926B001CBCA6 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA5CE2240E926B001CBCA6 /* ProjectCell.swift */; };
+		20CA5CE5240E926B001CBCA6 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CA5CE3240E926B001CBCA6 /* ProjectCell.xib */; };
+		20CA5CE7240EA7CF001CBCA6 /* ProjectThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA5CE6240EA7CF001CBCA6 /* ProjectThumbnail.swift */; };
 		7A2B29692130556F80EF6670 /* Pods_CryptoFunding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213DEA7FE3E8854FCCE18B27 /* Pods_CryptoFunding.framework */; };
 		C524876C23E2F99F00B6814D /* WalletHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876B23E2F99F00B6814D /* WalletHandler.swift */; };
 		C524876F23E2FCDB00B6814D /* WalletMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524876E23E2FCDB00B6814D /* WalletMapper.swift */; };
@@ -54,6 +57,9 @@
 		20909BAB24007AD900EFF46B /* BottomLeftRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftRoundedView.swift; sourceTree = "<group>"; };
 		20909BAD24007D8B00EFF46B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		20909BB124028E2900EFF46B /* LeftLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftLabel.swift; sourceTree = "<group>"; };
+		20CA5CE2240E926B001CBCA6 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		20CA5CE3240E926B001CBCA6 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
+		20CA5CE6240EA7CF001CBCA6 /* ProjectThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectThumbnail.swift; sourceTree = "<group>"; };
 		213DEA7FE3E8854FCCE18B27 /* Pods_CryptoFunding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoFunding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FDC2871C336B805D8269CD /* Pods-CryptoFunding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoFunding.release.xcconfig"; path = "Target Support Files/Pods-CryptoFunding/Pods-CryptoFunding.release.xcconfig"; sourceTree = "<group>"; };
 		782C4A37F1EA352DCF81059F /* Pods-CryptoFunding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoFunding.debug.xcconfig"; path = "Target Support Files/Pods-CryptoFunding/Pods-CryptoFunding.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				202D7D1D240570D50044E273 /* Category.swift */,
+				20CA5CE6240EA7CF001CBCA6 /* ProjectThumbnail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 			children = (
 				2088F0A02409255E0082F894 /* CategoryCell.swift */,
 				2088F0A12409255E0082F894 /* CategoryCell.xib */,
+				20CA5CE2240E926B001CBCA6 /* ProjectCell.swift */,
+				20CA5CE3240E926B001CBCA6 /* ProjectCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 				C5F7F50A23E2B5870041D88E /* LaunchScreen.storyboard in Resources */,
 				C5F7F50723E2B5870041D88E /* Assets.xcassets in Resources */,
 				C5F7F50523E2B5860041D88E /* Main.storyboard in Resources */,
+				20CA5CE5240E926B001CBCA6 /* ProjectCell.xib in Resources */,
 				2088F0A32409255E0082F894 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,8 +457,10 @@
 				C5F7F52223E2BAA60041D88E /* WalletRepository.swift in Sources */,
 				C56FD42323E968DC00955A9E /* SimpleTestContract.swift in Sources */,
 				C5F7F4FE23E2B5860041D88E /* AppDelegate.swift in Sources */,
+				20CA5CE7240EA7CF001CBCA6 /* ProjectThumbnail.swift in Sources */,
 				C5F7F52023E2B89B0041D88E /* FakeDao.swift in Sources */,
 				200F1F02240658E300713BE6 /* Extensions.swift in Sources */,
+				20CA5CE4240E926B001CBCA6 /* ProjectCell.swift in Sources */,
 				20909BB224028E2900EFF46B /* LeftLabel.swift in Sources */,
 				202D7D1E240570D50044E273 /* Category.swift in Sources */,
 				20909BAC24007AD900EFF46B /* BottomLeftRoundedView.swift in Sources */,
@@ -649,8 +661,9 @@
 			baseConfigurationReference = 782C4A37F1EA352DCF81059F /* Pods-CryptoFunding.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NW7B48KQN6;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9XJL9L64JM;
 				INFOPLIST_FILE = CryptoFunding/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,6 +672,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = devmob9.CryptoFunding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Développement Technifutur";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -669,8 +683,9 @@
 			baseConfigurationReference = 68FDC2871C336B805D8269CD /* Pods-CryptoFunding.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NW7B48KQN6;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9XJL9L64JM;
 				INFOPLIST_FILE = CryptoFunding/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -679,6 +694,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = devmob9.CryptoFunding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Développement Technifutur";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
