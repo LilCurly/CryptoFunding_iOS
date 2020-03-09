@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXU-yG-7aA" customClass="BottomLeftRoundedView" customModule="CryptoFunding" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="288.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAZ-3e-Ea3" customClass="LeftLabel" customModule="CryptoFunding" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="83.5" height="30"/>
@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yve-8c-8zF">
-                                        <rect key="frame" x="0.0" y="156.5" width="414" height="141"/>
+                                        <rect key="frame" x="0.0" y="138" width="414" height="134.5"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="az4-Ic-Alo">
                                             <size key="itemSize" width="169" height="136"/>
@@ -58,16 +58,15 @@
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="oAZ-3e-Ea3" firstAttribute="leading" secondItem="dXU-yG-7aA" secondAttribute="leading" id="9dr-5t-JUd"/>
-                                    <constraint firstItem="yve-8c-8zF" firstAttribute="top" secondItem="oAZ-3e-Ea3" secondAttribute="bottom" priority="750" constant="16" id="UDK-k9-blW"/>
+                                    <constraint firstItem="yve-8c-8zF" firstAttribute="top" secondItem="oAZ-3e-Ea3" secondAttribute="bottom" constant="16" id="UDK-k9-blW"/>
                                     <constraint firstAttribute="bottom" secondItem="yve-8c-8zF" secondAttribute="bottom" constant="16" id="WO3-2c-Qwp"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oAZ-3e-Ea3" secondAttribute="trailing" constant="20" symbolic="YES" id="e9S-LM-4m9"/>
                                     <constraint firstAttribute="trailing" secondItem="yve-8c-8zF" secondAttribute="trailing" id="l4q-Fp-9H3"/>
-                                    <constraint firstItem="yve-8c-8zF" firstAttribute="height" secondItem="dXU-yG-7aA" secondAttribute="height" multiplier="45:100" id="o8P-RX-M5D"/>
                                     <constraint firstItem="yve-8c-8zF" firstAttribute="leading" secondItem="dXU-yG-7aA" secondAttribute="leading" id="oRi-DQ-MkC"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPN-My-4MA" customClass="LeftLabel" customModule="CryptoFunding" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="329.5" width="67.5" height="30"/>
+                                <rect key="frame" x="0.0" y="304.5" width="67.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zEm-oR-nNS"/>
                                 </constraints>
@@ -76,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lS8-88-Eqp">
-                                <rect key="frame" x="0.0" y="375.5" width="414" height="421.5"/>
+                                <rect key="frame" x="0.0" y="350.5" width="414" height="446.5"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMr-ic-vyJ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -96,10 +95,10 @@
                             <constraint firstItem="lS8-88-Eqp" firstAttribute="top" secondItem="NPN-My-4MA" secondAttribute="bottom" constant="16" id="AnO-iP-fYr"/>
                             <constraint firstItem="mgU-yo-1IB" firstAttribute="bottom" secondItem="lS8-88-Eqp" secondAttribute="bottom" constant="16" id="Jfb-CG-2oo"/>
                             <constraint firstItem="NPN-My-4MA" firstAttribute="top" secondItem="dXU-yG-7aA" secondAttribute="bottom" constant="16" id="LWY-9Z-AhJ"/>
+                            <constraint firstItem="yve-8c-8zF" firstAttribute="height" secondItem="GlV-Nb-cyR" secondAttribute="height" multiplier="0.15" id="Ma5-xr-1qd"/>
                             <constraint firstItem="oAZ-3e-Ea3" firstAttribute="top" secondItem="mgU-yo-1IB" secondAttribute="top" constant="4" id="PbT-ef-hQE"/>
                             <constraint firstItem="mgU-yo-1IB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NPN-My-4MA" secondAttribute="trailing" symbolic="YES" id="Sqy-Ip-G84"/>
                             <constraint firstItem="NPN-My-4MA" firstAttribute="leading" secondItem="mgU-yo-1IB" secondAttribute="leading" id="U23-FH-Wx2"/>
-                            <constraint firstItem="dXU-yG-7aA" firstAttribute="height" secondItem="GlV-Nb-cyR" secondAttribute="height" multiplier="35:100" id="ZEN-SC-0O4"/>
                             <constraint firstItem="dXU-yG-7aA" firstAttribute="top" secondItem="GlV-Nb-cyR" secondAttribute="top" id="bV7-J1-xWS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mgU-yo-1IB"/>
@@ -107,8 +106,6 @@
                     <navigationItem key="navigationItem" id="8HQ-Bz-rs0"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="yve-8c-8zF" id="x0c-Lm-E1K"/>
-                        <outlet property="categoryCollectionViewBottomConstraint" destination="WO3-2c-Qwp" id="t0d-sR-ZpF"/>
-                        <outlet property="categoryCollectionViewTopConstraint" destination="UDK-k9-blW" id="DFU-3Q-KN3"/>
                         <outlet property="categoryLabel" destination="oAZ-3e-Ea3" id="rO7-l7-m2e"/>
                         <outlet property="projectsCollectionView" destination="lS8-88-Eqp" id="CzD-BL-49k"/>
                         <outlet property="topContainerView" destination="dXU-yG-7aA" id="ezN-i5-MDX"/>

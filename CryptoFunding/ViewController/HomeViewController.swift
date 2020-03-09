@@ -16,9 +16,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var trendingLabel: LeftLabel!
     @IBOutlet weak var projectsCollectionView: UICollectionView!
     
-    @IBOutlet weak var categoryCollectionViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var categoryCollectionViewBottomConstraint: NSLayoutConstraint!
-    
     
     private let categories = Category.categories
     private var projects = ProjectThumbnail.pathfinderProjects
@@ -28,12 +25,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         cellSpacing = view.frame.width * 3 / 100
         setupView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let availableSpace = topContainerView.frame.height - categoryLabel.frame.origin.y - categoryLabel.frame.height - categoryCollectionView.frame.height
-        categoryCollectionViewTopConstraint.constant = availableSpace / 2
-        categoryCollectionViewBottomConstraint.constant = availableSpace / 2
     }
     
     func setupView() {
