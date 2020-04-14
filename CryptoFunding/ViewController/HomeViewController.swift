@@ -33,6 +33,8 @@ class HomeViewController: UIViewController {
         tabBarController?.tabBar.tintColor = UIColor.appWhite
         navigationItem.title = "Crypto Bingo"
         navigationItem.titleView?.tintColor = UIColor.appWhite
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Wallets", style: .plain, target: self, action: #selector(openWallets))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.appWhite
         
         categoryLabel.text = "Categories"
         trendingLabel.text = "Trending"
@@ -77,6 +79,10 @@ class HomeViewController: UIViewController {
         projectsCollectionView.showsHorizontalScrollIndicator = false
         projectsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         projectsCollectionView.register(UINib(nibName: "ProjectCell", bundle: nil), forCellWithReuseIdentifier: ProjectCell.reuseCellIdentifier)
+    }
+    
+    @objc func openWallets() {
+        print("add code to open new ViewController")
     }
 
 }
