@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     @IBOutlet weak var topContainerView: BottomLeftRoundedView!
     @IBOutlet weak var categoryLabel: LeftLabel!
@@ -23,33 +23,19 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellSpacing = view.frame.width * 3 / 100
-        setupView()
     }
     
-    func setupView() {
-        view.backgroundColor = UIColor.appDarkGray
-        tabBarController?.tabBar.barTintColor = UIColor.appLightGray
-        tabBarController?.tabBar.tintColor = UIColor.appWhite
+    override func setupView() {
+        super.setupView()
+        super.addWalletsButton()
+        cellSpacing = view.frame.width * 3 / 100
         navigationItem.title = "Crypto Bingo"
-        navigationItem.titleView?.tintColor = UIColor.appWhite
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Wallets", style: .plain, target: self, action: #selector(openWallets))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.appWhite
         
         categoryLabel.text = "Categories"
         trendingLabel.text = "Trending"
         
-        setupNavigationBar()
         setupCategoryCollectionView()
         setupProjectCollectionView()
-    }
-    
-    func setupNavigationBar() {
-        guard let navigationController = navigationController else { return }
-        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController.navigationBar.shadowImage = UIImage()
-        navigationController.navigationBar.isTranslucent = true
-        navigationController.view.backgroundColor = .clear
     }
     
     func setupCategoryCollectionView() {
@@ -79,10 +65,6 @@ class HomeViewController: UIViewController {
         projectsCollectionView.showsHorizontalScrollIndicator = false
         projectsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         projectsCollectionView.register(UINib(nibName: "ProjectCell", bundle: nil), forCellWithReuseIdentifier: ProjectCell.reuseCellIdentifier)
-    }
-    
-    @objc func openWallets() {
-        print("add code to open new ViewController")
     }
 
 }

@@ -37,6 +37,7 @@
 		C5F7F51E23E2B80D0041D88E /* AbstractDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F51D23E2B80D0041D88E /* AbstractDao.swift */; };
 		C5F7F52023E2B89B0041D88E /* FakeDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F51F23E2B89B0041D88E /* FakeDao.swift */; };
 		C5F7F52223E2BAA60041D88E /* WalletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7F52123E2BAA60041D88E /* WalletRepository.swift */; };
+		D6142C16247C11A000D9D6A5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6142C15247C11A000D9D6A5 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		C5F7F51D23E2B80D0041D88E /* AbstractDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDao.swift; sourceTree = "<group>"; };
 		C5F7F51F23E2B89B0041D88E /* FakeDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDao.swift; sourceTree = "<group>"; };
 		C5F7F52123E2BAA60041D88E /* WalletRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepository.swift; sourceTree = "<group>"; };
+		D6142C15247C11A000D9D6A5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				20909BAD24007D8B00EFF46B /* HomeViewController.swift */,
+				D6142C15247C11A000D9D6A5 /* BaseViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				2088F0A22409255E0082F894 /* CategoryCell.swift in Sources */,
 				C5F7F51323E2B59A0041D88E /* Wallet.swift in Sources */,
 				C5F7F50223E2B5860041D88E /* ViewController.swift in Sources */,
+				D6142C16247C11A000D9D6A5 /* BaseViewController.swift in Sources */,
 				C582F7A123EAF37B00BE8D80 /* WalletRepositoryFactory.swift in Sources */,
 				C5B8E5A823F17A71003568F0 /* FundingContract.swift in Sources */,
 				C5F7F52223E2BAA60041D88E /* WalletRepository.swift in Sources */,
