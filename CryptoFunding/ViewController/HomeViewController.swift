@@ -15,6 +15,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var trendingLabel: LeftLabel!
     @IBOutlet weak var projectsCollectionView: UICollectionView!
+    @IBOutlet weak var seeMoreButton: UIButton!
     
     
     private let categories = Category.categories
@@ -33,6 +34,8 @@ class HomeViewController: BaseViewController {
         
         categoryLabel.text = "Categories"
         trendingLabel.text = "Trending"
+        seeMoreButton.setTitle("See more", for: .normal)
+        seeMoreButton.tintColor = UIColor.appWhite
         
         setupCategoryCollectionView()
         setupProjectCollectionView()
@@ -67,6 +70,9 @@ class HomeViewController: BaseViewController {
         projectsCollectionView.register(UINib(nibName: "ProjectCell", bundle: nil), forCellWithReuseIdentifier: ProjectCell.reuseCellIdentifier)
     }
 
+    @IBAction func seeMoreAction(_ sender: UIButton) {
+        print("add code to push next VC")
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

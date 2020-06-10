@@ -85,6 +85,13 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqp-6m-Zhi">
+                                <rect key="frame" x="332" y="304.5" width="66" height="30"/>
+                                <state key="normal" title="See more"/>
+                                <connections>
+                                    <action selector="seeMoreAction:" destination="t90-ld-L0W" eventType="touchUpInside" id="pEV-34-jlI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -97,9 +104,11 @@
                             <constraint firstItem="NPN-My-4MA" firstAttribute="top" secondItem="dXU-yG-7aA" secondAttribute="bottom" constant="16" id="LWY-9Z-AhJ"/>
                             <constraint firstItem="yve-8c-8zF" firstAttribute="height" secondItem="GlV-Nb-cyR" secondAttribute="height" multiplier="0.15" id="Ma5-xr-1qd"/>
                             <constraint firstItem="oAZ-3e-Ea3" firstAttribute="top" secondItem="mgU-yo-1IB" secondAttribute="top" constant="4" id="PbT-ef-hQE"/>
+                            <constraint firstItem="Nqp-6m-Zhi" firstAttribute="centerY" secondItem="NPN-My-4MA" secondAttribute="centerY" id="SZk-sL-uiz"/>
                             <constraint firstItem="mgU-yo-1IB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NPN-My-4MA" secondAttribute="trailing" symbolic="YES" id="Sqy-Ip-G84"/>
                             <constraint firstItem="NPN-My-4MA" firstAttribute="leading" secondItem="mgU-yo-1IB" secondAttribute="leading" id="U23-FH-Wx2"/>
                             <constraint firstItem="dXU-yG-7aA" firstAttribute="top" secondItem="GlV-Nb-cyR" secondAttribute="top" id="bV7-J1-xWS"/>
+                            <constraint firstItem="mgU-yo-1IB" firstAttribute="trailing" secondItem="Nqp-6m-Zhi" secondAttribute="trailing" constant="16" id="cs1-EE-mDZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mgU-yo-1IB"/>
                     </view>
@@ -108,6 +117,7 @@
                         <outlet property="categoryCollectionView" destination="yve-8c-8zF" id="x0c-Lm-E1K"/>
                         <outlet property="categoryLabel" destination="oAZ-3e-Ea3" id="rO7-l7-m2e"/>
                         <outlet property="projectsCollectionView" destination="lS8-88-Eqp" id="CzD-BL-49k"/>
+                        <outlet property="seeMoreButton" destination="Nqp-6m-Zhi" id="eJW-Js-WKw"/>
                         <outlet property="topContainerView" destination="dXU-yG-7aA" id="ezN-i5-MDX"/>
                         <outlet property="trendingLabel" destination="NPN-My-4MA" id="Zoa-AE-MaM"/>
                     </connections>
